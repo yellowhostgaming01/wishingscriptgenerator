@@ -602,7 +602,7 @@ document.addEventListener('DOMContentLoaded', () => {
     selectBox.classList.toggle('active');
   });
 
-  var abc = document.querySelectorAll('#system li');
+  var abc = document.querySelectorAll('#yellowbhai li');
 
   abc.forEach(function(lie) {
     option.appendChild(lie);

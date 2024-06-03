@@ -4,11 +4,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Form Submission</title>
 </head>
 
 <body>
-  @yellowhostgaming
+  <h1>Form Submission</h1>
+  <form id="data-form">
+    <label for="url">URL:</label>
+    <input type="text" id="url" name="url"><br><br>
+    <label for="festival">Festival:</label>
+    <input type="text" id="festival" name="festival"><br><br>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date"><br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById('data-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Collect form data
+      const url = document.getElementById('url').value;
+      const festival = document.getElementById('festival').value;
+      const date = document.getElementById('date').value;
+
+      // Create data object
+      const formData = {
+        "url": url,
+        "festival": festival,
+        "date": date
+      };
+
+      // Save data to faltu.js
+      fetch('faltu.js', {
+          method: 'PUT',
+          body: JSON.stringify(formData)
+        })
+        .then(response => {
+          if (response.ok) {
+            console.log('Data saved successfully.');
+          } else {
+            console.error('Error saving data.');
+          }
+        })
+        .catch(error => {
+          console.error('Error saving data:', error);
+        });
+    });
+  </script>
 </body>
 
 </html>

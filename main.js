@@ -107,7 +107,7 @@ rope.addEventListener("click", function() {
   audioyhg();
 });
 
-var defaultaudio = new Audio("https://drive.google.com/uc?export=download&id=12RIIMvqSPa3AcbxZSde9UXOcTTn7ArW2");
+var defaultaudio = new Audio("diwali.mp3");
 function audioyhg(){
   defaultaudio.play();
 }

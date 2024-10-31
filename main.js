@@ -88,7 +88,7 @@ function sharewhatsapp() {
   shareString += "*" + h1.innerHTML + "*";
 
   shareString += " ने *शुभ दीपावली का संदेश* आपके लिए भेजा है , देखने के लिए *नीचे जादुई Link* पर क्लिक करें%0A👇👇%0A"
-  shareString += (window.location.href.split("?")[0] + "?name=" + h1.innerHTML).replace("#", "");
+  shareString += (window.location.href.split("?")[0] + "?name=" + sname).replace("#", "");
   whatsappHref = "whatsapp://send?text=" + shareString;
   window.location.href = whatsappHref;
 };
